@@ -1,0 +1,18 @@
+spring:
+  cloud:
+    config:
+      discovery:
+        enabled: true
+      server:
+        git:
+          uri: https://github.com/ralspaugh/service-discovery-config.git
+          search-paths: configuration
+        native:
+          search-locations: file://${user.home}/workspace/spring-cloud-bootstrap/configuration
+  application:
+    name: configuration-service
+server:
+  port: 8888
+management:
+  security:
+    enabled: false
