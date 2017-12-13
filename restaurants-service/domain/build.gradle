@@ -1,0 +1,6 @@
+group 'service-discovery-config'
+version '1.0-SNAPSHOT'
+
+dependencies {
+    compile('org.springframework.data:spring-data-mongodb:1.10.9.RELEASE')
+}

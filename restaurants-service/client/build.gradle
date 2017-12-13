@@ -1,0 +1,13 @@
+group 'service-discovery-config'
+version '1.0-SNAPSHOT'
+
+jar {
+    baseName = 'restaurants-client'
+    version = '0.1.0'
+}
+
+dependencies {
+    compile project(':restaurants-domain')
+    compile('org.springframework:spring-web:5.0.2.RELEASE')
+    compile('org.springframework.cloud:spring-cloud-netflix-core:1.4.0.RELEASE')
+}

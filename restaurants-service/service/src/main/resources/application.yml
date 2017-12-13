@@ -1,0 +1,22 @@
+spring:
+  application:
+    name: restaurants
+  data.mongodb:
+      database: test
+      host: localhost
+      port: 27017
+
+eureka:
+  instance:
+    leaseRenewalIntervalInSeconds: 1
+    leaseExpirationDurationInSeconds: 2
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:8762/eureka/
+    healthcheck:
+      enabled: false
+    lease:
+      duration: 5
+
+server:
+  port: 8080

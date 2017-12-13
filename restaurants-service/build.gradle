@@ -1,0 +1,24 @@
+group 'service-discovery-config'
+version '1.0-SNAPSHOT'
+subprojects {
+    buildscript {
+        repositories {
+            mavenCentral()
+        }
+    }
+
+    apply plugin: 'java'
+    apply plugin: 'idea'
+
+    jar {
+        baseName = 'restaurants-service'
+        version = '0.1.0'
+    }
+
+    repositories {
+        mavenCentral()
+    }
+
+    sourceCompatibility = 1.8
+    targetCompatibility = 1.8
+}

@@ -1,0 +1,8 @@
+rootProject.name = 'restaurants-service'
+include 'domain'
+findProject(':domain')?.name = 'restaurants-domain'
+include 'service'
+findProject(':service')?.name = 'restaurants-service'
+include 'client'
+findProject(':client')?.name = 'restaurants-client'
+include 'restaurants-caller'

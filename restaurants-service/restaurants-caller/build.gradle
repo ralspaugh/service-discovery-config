@@ -1,0 +1,28 @@
+group 'service-discovery-config'
+version '1.0-SNAPSHOT'
+
+apply plugin: 'org.springframework.boot'
+
+jar {
+    baseName = 'restaurants-caller'
+    version = '0.1.0'
+}
+
+buildscript {
+    dependencies {
+        classpath("org.springframework.boot:spring-boot-gradle-plugin:1.5.9.RELEASE")
+    }
+}
+
+dependencyManagement {
+    imports {
+        mavenBom 'org.springframework.cloud:spring-cloud-dependencies:Edgware.RELEASE'
+    }
+}
+
+dependencies {
+    compile project(':restaurants-client')
+    compile('org.springframework.boot:spring-boot-starter-web')
+    compile('org.springframework.cloud:spring-cloud-starter-eureka')
+    compile('org.springframework.cloud:spring-cloud-starter-feign')
+}
