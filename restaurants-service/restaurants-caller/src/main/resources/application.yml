@@ -9,5 +9,7 @@ eureka:
 
 spring.cloud.config.uri: http://localhost:8888
 
+management.security.enabled: false
+
 server:
   port: 9000
