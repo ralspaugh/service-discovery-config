@@ -7,8 +7,6 @@ spring:
         git:
           uri: https://github.com/ralspaugh/service-discovery-config.git
           search-paths: configuration
-        native:
-          search-locations: file://${user.home}/workspace/spring-cloud-bootstrap/configuration
   application:
     name: configuration-service
 server:
