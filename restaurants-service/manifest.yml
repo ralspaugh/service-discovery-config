@@ -1,0 +1,18 @@
+---
+applications:
+- name: restaurants-service
+  memory: 768M
+  instances: 1
+  random-route: true
+  services:
+    - mongo
+    - eureka
+  path: ./service/build/libs/restaurants-service.jar
+- name: restaurants-caller
+  memory: 768M
+  instances: 1
+  random-route: true
+  services:
+    - eureka
+    - config
+  path: ./restaurants-caller/build/libs/restaurants-caller.jar
