@@ -3,7 +3,7 @@ version '1.0-SNAPSHOT'
 
 jar {
     baseName = 'restaurants-service'
-    version = '0.1.0'
+    version = ''
 }
 
 apply plugin: 'org.springframework.boot'
@@ -16,14 +16,15 @@ buildscript {
 
 dependencyManagement {
     imports {
-        mavenBom 'org.springframework.cloud:spring-cloud-dependencies:Edgware.RELEASE'
+        mavenBom "org.springframework.cloud:spring-cloud-dependencies:Edgware.SR1"
+        mavenBom "io.pivotal.spring.cloud:spring-cloud-services-dependencies:1.6.1.RELEASE"
     }
 }
 
 dependencies {
     compile project(':restaurants-domain')
+    compile("io.pivotal.spring.cloud:spring-cloud-services-starter-service-registry")
     compile('org.springframework.boot:spring-boot-starter-data-rest')
     compile('org.springframework.boot:spring-boot-starter-data-mongodb')
-    compile('org.springframework.cloud:spring-cloud-starter-eureka')
-    testCompile("org.springframework.boot:spring-boot-starter-test")
+    compile('org.springframework.boot:spring-boot-starter-actuator')
 }
